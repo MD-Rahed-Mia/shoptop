@@ -27,7 +27,6 @@ function Cart() {
     } else if (cart.length > 0) {
       setNullCart(false);
     }
-    console.log(cartNull);
   }, [cart]);
 
   //handle decrease quantity
