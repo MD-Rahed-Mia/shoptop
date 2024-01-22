@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Logo from "./../assets/images/logo.webp";
 import "./../style/Navbar.css";
 import { Link } from "react-router-dom";
 import { useFirebase } from "../contexts/context";
@@ -25,7 +24,11 @@ function Navbar() {
         <div className="nav-top">
           <div className="nav-left">
             <Link to={"/"}>
-              <img src={Logo} alt="logo" className="nav-logo" />
+              <img
+                src="https://cdn3.iconfinder.com/data/icons/branding-2/64/3._shop_banner_design_advertising_brand_print-128.png"
+                alt="logo"
+                className="nav-logo"
+              />
               <span>ShopTop</span>
             </Link>
           </div>

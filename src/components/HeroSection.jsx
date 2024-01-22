@@ -1,7 +1,5 @@
 import React from "react";
-import HeroBg from "./../assets/images/Herobg.jpg";
 import "./../style/Herosection.css";
-import Logo from "./../assets/images/logo.webp";
 import { Link } from "react-router-dom";
 
 function HeroSection() {
@@ -9,12 +7,15 @@ function HeroSection() {
     <div
       className="hero-section"
       style={{
-        backgroundImage: `url(${HeroBg})`,
+        backgroundImage: `url('https://imgv3.fotor.com/images/share/Advertising-poster-banner.png)`,
       }}
     >
       <div className="hero-card">
         <div className="hero-top">
-          <img src={Logo} alt="" />
+          <img
+            src="https://cdn3.iconfinder.com/data/icons/branding-2/64/3._shop_banner_design_advertising_brand_print-128.png"
+            alt=""
+          />
           <span>ShopTop</span>
         </div>
         <h1>The best home entertainment system is here</h1>
@@ -22,7 +23,7 @@ function HeroSection() {
           Chaque trésor âme bonheur décor ce, âme soucieux que dans de beauté
           suborneur regarde,.
         </p>
-        <Link to={'/allproducts'}>
+        <Link to={"/allproducts"}>
           <button>shop now</button>
         </Link>
       </div>
