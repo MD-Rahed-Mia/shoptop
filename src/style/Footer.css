@@ -1,0 +1,23 @@
+footer {
+  background: whitesmoke;
+  min-height: 50px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.language-box {
+  padding: 0.8rem;
+  border: 1px solid seagreen;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.language-box:hover {
+  color: hotpink;
+}

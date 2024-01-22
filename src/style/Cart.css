@@ -31,6 +31,8 @@ td {
 
 .pr-details img {
   width: 80px;
+  height: 80px;
+  padding: .5rem;
 }
 .qn-container {
   display: flex;
@@ -44,6 +46,49 @@ td {
   padding: 10px;
   margin: 0 10px;
   background: none;
+  border: none;
+  cursor: pointer;
+}
+.deleteBtn {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.deleteBtn:hover {
+  color: var(--primary-color);
+}
+
+/* cart right container  */
+.cart-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.cart-total {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  min-height: 120px;
+  background: whitesmoke;
+  padding: 1.2rem;
+}
+
+.cart-total > .qs-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-total .checkout-btn {
+  width: 100%;
+  padding: 6px;
+  font-size: 1.2rem;
+  color: white;
+  background: var(--primary-color);
+  margin-top: 1.5rem;
   border: none;
   cursor: pointer;
 }

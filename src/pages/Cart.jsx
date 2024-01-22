@@ -1,8 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
 import "./../style/Cart.css";
+import { MdDeleteForever } from "react-icons/md";
 
 function Cart() {
+  //discount rate
+  const [discountRate, setDiscountRate] = useState(10);
+
+  //calculate discount ammount
+  const [calcDiscountAmount, setCalcDiscountAmount] = useState(0);
+
+  //storing total value of cart item
+  const [sumOfItem, setSumOfItem] = useState(0);
+
+  //shipping fee
+  const [shippingFee, setshippingFee] = useState(60);
+
   //set localstorage variable to cart variable
   const [cart, setCart] =
     useState(JSON.parse(localStorage.getItem("cart"))) || [];
@@ -50,17 +63,20 @@ function Cart() {
 
   //handle delete cart item
   function deleteCartItem(productId) {
-    const updateArray = [...cart];
-    const findIndex = updateArray.findIndex(
-      (item) => item.productId == productId
-    );
-
-    const filterItem = updateArray.filter((ele) => {
-      return ele.productId !== productId;
-    });
-    localStorage.setItem("cart", JSON.stringify(filterItem));
-    setCart(filterItem);
+    const updateArray = cart.filter((ele) => ele.productId !== productId);
+    setCart(updateArray);
+    localStorage.setItem("cart", JSON.stringify(updateArray));
   }
+
+  //using reduce method getting total of items quantity and price
+  const sumOf = cart.reduce((acc, ele) => {
+    return (acc += ele.quantity * ele.price);
+  }, 0);
+
+  useEffect(() => {
+    setSumOfItem(sumOf);
+    setCalcDiscountAmount(((sumOfItem * 10) / 100).toFixed(2));
+  });
 
   return (
     <Layout>
@@ -127,9 +143,10 @@ function Cart() {
                           </td>
                           <td className="text-center">
                             <button
+                              className="deleteBtn"
                               onClick={() => deleteCartItem(element.productId)}
                             >
-                              delete
+                              <MdDeleteForever />
                             </button>
                           </td>
                         </tr>
@@ -140,7 +157,34 @@ function Cart() {
             )}
           </div>
         </div>
-        <div className="cart-right"></div>
+        <div className="cart-right">
+          {cartNull ? (
+            ""
+          ) : (
+            <div className="cart-total">
+              <h2>Order Summary</h2>
+              <div className="qs-box">
+                <span>Subtotal: </span> <span>{sumOfItem.toFixed(2)}</span>
+              </div>
+              <div className="qs-box">
+                <span>Shipping Fee: </span> <span>{shippingFee}</span>
+              </div>
+              <div className="qs-box">
+                <span>Discount: {discountRate}% </span>{" "}
+                <span>{calcDiscountAmount}</span>
+              </div>
+              <div className="qs-box">
+                <span>Total: </span>{" "}
+                <span>
+                  {(sumOfItem + shippingFee - calcDiscountAmount).toFixed(2)}
+                </span>
+              </div>
+              <div>
+                <button className="checkout-btn">Procced to checkout</button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </Layout>
   );
