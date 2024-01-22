@@ -176,7 +176,7 @@ function Cart() {
               <div className="qs-box">
                 <span>Total: </span>{" "}
                 <span>
-                  {(sumOfItem + shippingFee - calcDiscountAmount).toFixed(2)}
+                  {((sumOfItem + shippingFee) - calcDiscountAmount).toFixed(2)}
                 </span>
               </div>
               <div>
