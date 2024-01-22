@@ -130,9 +130,7 @@ function Cart() {
                             <button
                               onClick={() => deleteCartItem(element.productId)}
                             >
-                              <span className="material-symbols-outlined">
-                                delete
-                              </span>
+                              delete
                             </button>
                           </td>
                         </tr>
