@@ -1,0 +1,14 @@
+
+.discount-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.discount-left, .discount-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

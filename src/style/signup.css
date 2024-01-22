@@ -1,0 +1,49 @@
+.signup-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.signup-left img {
+  max-width: 100%;
+  height: auto;
+}
+
+.signup-right form {
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.signup-right form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.signup-right form input[type="email"],
+input[type="password"], input[type='text'] {
+  min-width: 500px;
+  border: none;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.03) 1px 1px 3px, rgba(0, 0, 0, 0.3) 2px 1px 3px,
+    rgba(0, 0, 0, 0.3) -1px -1px 2px;
+  border-radius: 4px;
+  outline: none;
+  margin: 5px 0 10px 0;
+}
+
+.signup-agree {
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.signup-btn {
+  padding: 5px 2rem;
+  min-width: 200px;
+  margin-top: 2.5rem;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  display: block;
+  border-radius: 5px;
+}
