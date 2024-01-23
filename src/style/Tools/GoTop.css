@@ -1,0 +1,18 @@
+.goToTop {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: orangered;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.goToTop:hover {
+  background: whitesmoke;
+}

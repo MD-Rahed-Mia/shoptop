@@ -82,7 +82,6 @@ function Cart() {
     <Layout>
       <div className="cart-container">
         <div className="cart-left">
-          <h1>Your cart have 2 items.</h1>
           <div className="cart-table">
             {cartNull ? (
               <h1>No Item in cart.</h1>
@@ -176,7 +175,7 @@ function Cart() {
               <div className="qs-box">
                 <span>Total: </span>{" "}
                 <span>
-                  {((sumOfItem + shippingFee) - calcDiscountAmount).toFixed(2)}
+                  {(sumOfItem + shippingFee - calcDiscountAmount).toFixed(2)}
                 </span>
               </div>
               <div>

@@ -11,13 +11,7 @@ function Navbar() {
     firebaseAuth.signOutUser();
   };
 
-  const [cartItem, setCartItem] = useState("0");
-
-  useEffect(() => {
-    const cartIt = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItem(cartIt.length);
-  }, []);
-
+  
   return (
     <div>
       <nav>
@@ -58,7 +52,7 @@ function Navbar() {
             <li className="cart-icon">
               <Link to={"/cart"}>
                 <span className="material-symbols-outlined">shopping_bag</span>
-                <div className="cart-count">{cartItem}</div>
+                <div className="cart-count">{''}</div>
               </Link>
             </li>
             <li>

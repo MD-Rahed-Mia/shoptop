@@ -32,35 +32,35 @@ function Home() {
         <HeroSection />
         <ProductCategory />
         <DiscountCard />
-        {isLoading ? (
-          <p>loading...</p>
-        ) : (
-          <Productdisplay
-            data={product}
-            productItem="Men's collection"
-            categoryName="Topdeal today"
-          />
-        )}
-        {isLoading ? (
-          <p>loading...</p>
-        ) : (
-          <Productdisplay
-            data={product}
-            productItem="air conditionar"
-            categoryName="New Arrival"
-          />
-        )}
-        {isLoading ? (
-          <p>loading...</p>
-        ) : (
-          <Productdisplay
-            data={product}
-            productItem="air conditionar"
-            categoryName="Best selling"
-          />
-        )}
-
-       
+        <div className="container">
+          {isLoading ? (
+            <p>loading...</p>
+          ) : (
+            <Productdisplay
+              data={product}
+              productItem="Men's collection"
+              categoryName="Topdeal today"
+            />
+          )}
+          {isLoading ? (
+            <p>loading...</p>
+          ) : (
+            <Productdisplay
+              data={product}
+              productItem="air conditionar"
+              categoryName="New Arrival"
+            />
+          )}
+          {isLoading ? (
+            <p>loading...</p>
+          ) : (
+            <Productdisplay
+              data={product}
+              productItem="air conditionar"
+              categoryName="Best selling"
+            />
+          )}
+        </div>
       </Layout>
     </>
   );

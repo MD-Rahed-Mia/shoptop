@@ -7,7 +7,7 @@ function HeroSection() {
     <div
       className="hero-section"
       style={{
-        backgroundImage: `url('https://imgv3.fotor.com/images/share/Advertising-poster-banner.png)`,
+        backgroundImage: `url('https://www.shutterstock.com/image-vector/paper-art-shopping-online-on-260nw-2074005938.jpg')`,
       }}
     >
       <div className="hero-card">

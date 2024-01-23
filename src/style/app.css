@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+body {
+  scroll-behavior: smooth;
+}
 
 :root {
   --primary-color: #0573f0;
