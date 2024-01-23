@@ -80,3 +80,52 @@
 .hero-desc__card > div p:last-child {
   font-size: 12px;
 }
+
+@media screen and (max-width: 650px) {
+  .hero-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #fff;
+  }
+  .hero-card {
+    height: 350px;
+    width: 300px;
+  }
+
+  .hero-section h1 {
+    font-size: 1.2rem;
+  }
+  .hero-section p {
+    font-size: 12px;
+  }
+  .hero-desc__card span {
+    font-size: 25px;
+  }
+  .hero-desc__card > div p:first-child {
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+  }
+  .hero-desc__card > div p:last-child {
+    font-size: 12px;
+  }
+  .hero-desc__card {
+    background: whitesmoke;
+  }
+  .hero-description {
+    position: static;
+    bottom: 0px;
+    left: 50%;
+    gap: 1rem;
+    transform: translateX(0);
+    height: 100px;
+    background: whitesmoke;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./../style/Navbar.css";
 import { Link } from "react-router-dom";
 import { useFirebase } from "../contexts/context";
+import { CiMenuBurger } from "react-icons/ci";
+import { RxCross2 } from "react-icons/rx";
+
 function Navbar() {
   const firebaseAuth = useFirebase();
 
@@ -11,7 +14,14 @@ function Navbar() {
     firebaseAuth.signOutUser();
   };
 
-  
+  //set menu status
+  const [menu, setMenu] = useState(false);
+
+  //handle menu status
+  function handleMenu() {
+    setMenu(!menu);
+  }
+
   return (
     <div>
       <nav>
@@ -37,7 +47,7 @@ function Navbar() {
           </div>
         </div>
         <div className="nav-bottom container">
-          <ul>
+          <ul className={menu ? "active" : ""}>
             <li>
               <Link to={"/allproducts"}>All products</Link>
             </li>
@@ -52,7 +62,6 @@ function Navbar() {
             <li className="cart-icon">
               <Link to={"/cart"}>
                 <span className="material-symbols-outlined">shopping_bag</span>
-                <div className="cart-count">{''}</div>
               </Link>
             </li>
             <li>
@@ -68,6 +77,9 @@ function Navbar() {
               <Link to={"/profile"}>Profile</Link>
             </li>
           </ul>
+          <div className="menu-btn" onClick={() => handleMenu()}>
+            {menu ? <RxCross2 /> : <CiMenuBurger />}
+          </div>
         </div>
       </nav>
     </div>

@@ -1,4 +1,3 @@
-
 .product-category {
   min-height: 70vh;
   padding: 10px;
@@ -27,4 +26,19 @@
 .category-card img {
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 640px) {
+  .category-cards {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 200px);
+  }
+  .category-card {
+    height: 200px;
+  }
+  .product-category {
+    height: 500px;
+    padding: 10px;
+    margin-top: 5rem !important;
+  }
 }

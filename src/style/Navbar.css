@@ -6,6 +6,7 @@ nav {
   top: 0;
   left: 0;
 }
+
 .nav-top {
   display: flex;
   align-items: center;
@@ -13,20 +14,28 @@ nav {
   padding: 0 3rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.6);
 }
+
+.menu-btn {
+  display: none;
+}
+
 .nav-left,
 .nav-right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .nav-left span {
   font-size: 3rem;
   font-weight: bolder;
   padding: 10px;
 }
+
 .nav-logo {
   width: 50px;
 }
+
 .nav-right input {
   width: 700px;
   padding: 10px;
@@ -34,13 +43,16 @@ nav {
   border: none;
   margin-right: 10px;
 }
+
 .nav-right span {
   font-size: 2rem;
   cursor: pointer;
 }
+
 .nav-bottom {
   padding: 1rem;
 }
+
 .nav-bottom ul {
   list-style-type: none;
   display: flex;
@@ -50,6 +62,7 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
 .nav-bottom ul li {
   cursor: pointer;
 }
@@ -76,4 +89,55 @@ nav {
   font-size: 1.2rem;
   color: white;
   border: none;
+}
+
+@media screen and (max-width: 650px) {
+  .nav-logo {
+    max-width: 30px;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-left span {
+    font-size: 1.5rem;
+  }
+
+  .nav-right input {
+    display: none;
+  }
+
+  .nav-bottom {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .nav-bottom ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 12px;
+    overflow: hidden;
+    height: 0;
+  }
+
+  .nav-bottom ul.active {
+    overflow: visible;
+    height: 250px;
+  }
+
+  .nav-bottom ul li {
+    padding: 10px;
+  }
+
+  .menu-btn {
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    color: white;
+  }
 }
