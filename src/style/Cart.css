@@ -3,6 +3,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 9fr 3fr;
+  min-height: 50vh;
 }
 
 .cart-table table {

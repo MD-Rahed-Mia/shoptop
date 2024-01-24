@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./../style/Navbar.css";
 import { Link } from "react-router-dom";
 import { useFirebase } from "../contexts/context";
-import { CiMenuBurger } from "react-icons/ci";
+import { IoMdMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import { BsCart4 } from "react-icons/bs";
 
 function Navbar() {
   const firebaseAuth = useFirebase();
@@ -77,8 +78,13 @@ function Navbar() {
               <Link to={"/profile"}>Profile</Link>
             </li>
           </ul>
+          <div className="cart-icon-mobile">
+            <Link to={"/cart"}>
+              <BsCart4 />
+            </Link>
+          </div>
           <div className="menu-btn" onClick={() => handleMenu()}>
-            {menu ? <RxCross2 /> : <CiMenuBurger />}
+            {menu ? <RxCross2 /> : <IoMdMenu />}
           </div>
         </div>
       </nav>

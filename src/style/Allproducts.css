@@ -68,6 +68,12 @@
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+  transition: all 300ms;
+}
+
+.all-products-card button:hover {
+  background: lightskyblue;
+  color: #222;
 }
 
 @media screen and (max-width: 650px) {
@@ -113,7 +119,7 @@
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px 5px;
+    gap: 1.5rem 5px;
     padding: 8px;
   }
   .all-products-card {
@@ -126,7 +132,7 @@
     flex-direction: column;
   }
   .all-products-card img {
-    max-width: 50%;
+    max-width: 40%;
     height: auto;
   }
   .all-products-card {
@@ -138,7 +144,7 @@
 
   .all-products-card button {
     width: 100%;
-    padding: 6px 2rem;
+    padding: 8px 2rem;
     margin-top: 10px;
     background: var(--primary-color);
     color: white;
