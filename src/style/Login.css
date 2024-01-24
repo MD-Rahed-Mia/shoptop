@@ -30,6 +30,10 @@ input[type="password"] {
   margin: 5px 0 10px 0;
 }
 
+.login-right a {
+  color: blue;
+}
+
 .login-agree {
   font-size: 12px;
   display: flex;
@@ -78,7 +82,7 @@ input[type="password"] {
 
   .login-right form input[type="email"],
   input[type="password"] {
-   width: 95%;
+    width: 95%;
     margin: 0 auto;
   }
 

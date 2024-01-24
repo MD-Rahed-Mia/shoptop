@@ -30,7 +30,7 @@
   color: lightseagreen;
 }
 .tab-content.active-content {
-      display: block;
+  display: block;
 }
 
 /* profile tab from component  */
@@ -67,31 +67,34 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 10px 1.5rem;
+  padding: 10px;
+  font-size: 12px;
   cursor: pointer;
   color: white;
   background: var(--primary-color);
   border: none;
 }
 
-.address-tab form label  {
+.address-tab form label {
   display: block;
   margin-bottom: 5px;
 }
 .address-tab form > div {
   margin: 10px 0;
 }
-.address-tab form input, select {
+.address-tab form input,
+select {
   padding: 10px;
   width: 50%;
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.1),-1px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1), -1px -1px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 5px;
 }
 
 .address-tab__card {
+  min-width: 250px;
   padding: 10px;
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.1),-1px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1), -1px -1px rgba(0, 0, 0, 0.1);
   width: 50%;
 }
 
@@ -101,4 +104,115 @@
   color: white;
   background: var(--primary-color);
   border: none;
+}
+
+@media screen and (max-width: 650px) {
+  .profile-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .profile-left {
+    background: whitesmoke;
+    padding: 8px;
+    width: 100%;
+  }
+  .profile-left ul {
+    margin-left: 30px;
+    list-style-type: none;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .profile-left ul li {
+    cursor: pointer;
+  }
+
+  .profile-right {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .profile-right .tab-content {
+    display: none;
+  }
+
+  .active-tabs {
+    color: lightseagreen;
+  }
+  .tab-content.active-content {
+    display: block;
+  }
+
+  /* profile tab from component  */
+  .profile-tab {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-tab > div {
+    min-height: 80px;
+  }
+
+  .profile-tab > div > span:nth-child(2) {
+    font-size: 13px;
+    padding: 5px;
+    color: lightseagreen;
+    cursor: pointer;
+  }
+
+  /* address tab from component  */
+  .address-tab {
+    position: relative;
+  }
+
+  .add-address_form {
+    display: none;
+  }
+
+  .add-address_form.active {
+    display: block;
+  }
+
+  .new-add_btn {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    right: 0;
+    padding: 6px;
+    cursor: pointer;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+  }
+
+  .address-tab form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .address-tab form > div {
+    margin: 10px 0;
+  }
+  .address-tab form input,
+  select {
+    padding: 10px;
+    width: 95%;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.1), -1px -1px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 5px;
+  }
+
+  .address-tab__card {
+    padding: 10px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.1), -1px -1px rgba(0, 0, 0, 0.1);
+    width: 50%;
+  }
+
+  .save-address_btn {
+    padding: 10px 1.5rem;
+    cursor: pointer;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+  }
 }

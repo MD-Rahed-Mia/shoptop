@@ -49,6 +49,10 @@
   border-radius: 5px;
 }
 
+.signup-right a {
+  color: blue;
+}
+
 @media screen and (max-width: 650px) {
   .signup-container {
     display: grid;
