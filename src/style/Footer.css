@@ -5,6 +5,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
 }
 .language-box {
   padding: 0.8rem;
@@ -20,4 +22,31 @@ footer {
 
 .language-box:hover {
   color: hotpink;
+}
+
+@media screen and (max-width: 650px) {
+  footer {
+  min-height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12px;
+}
+.language-box {
+  padding: 5px;
+  border: 1px solid seagreen;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.language-box:hover {
+  color: hotpink;
+}
 }

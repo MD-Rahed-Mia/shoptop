@@ -4,7 +4,7 @@ import { FaFacebook, FaLinkedin, FaWhatsapp, FaYoutube } from "react-icons/fa6";
 
 function Contact() {
   return (
-    <div className="contact-container container">
+    <div className="contact-container">
       <div className="contact-box">
         <h3>About shoptop</h3>
         <ul>

@@ -1,4 +1,3 @@
-
 .discount-container {
   width: 80%;
   display: grid;
@@ -7,8 +6,29 @@
   margin: 0 auto;
 }
 
-.discount-left, .discount-right {
+.discount-left,
+.discount-right {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 650px) {
+  .discount-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  .discount-left,
+  .discount-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }.discount-left img,
+  .discount-right img{
+    width: 100%;
+  }
 }

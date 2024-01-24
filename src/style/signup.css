@@ -18,8 +18,9 @@
   margin-top: 10px;
 }
 
-.signup-right form input[type="email"],
-input[type="password"], input[type='text'] {
+.signup-right > form input[type="email"],
+.signup-right input[type="password"],
+.signup-right input[type="text"] {
   min-width: 500px;
   border: none;
   padding: 10px;
@@ -46,4 +47,62 @@ input[type="password"], input[type='text'] {
   border: none;
   display: block;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 650px) {
+  .signup-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .signup-left img {
+    max-width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  .signup-right form {
+    width: 100%;
+    margin: 2rem auto;
+  }
+
+  .signup-right form label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .signup-right {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .signup-right form input[type="email"],
+  .signup-right form input[type="password"],
+  .signup-right form input[type="text"] {
+    min-width: 95%;
+    border: none;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.03) 1px 1px 3px, rgba(0, 0, 0, 0.3) 2px 1px 3px,
+      rgba(0, 0, 0, 0.3) -1px -1px 2px;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .signup-agree {
+    font-size: 12px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .signup-btn {
+    padding: 5px 2rem;
+    min-width: 200px;
+    margin-top: 2.5rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    display: block;
+    border-radius: 5px;
+  }
 }

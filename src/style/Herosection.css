@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: space-evenly;
   position: relative;
+  background-image: url("https://www.shutterstock.com/image-vector/paper-art-shopping-online-on-260nw-2074005938.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-card {
@@ -89,12 +92,14 @@
     background: #fff;
   }
   .hero-card {
-    height: 350px;
-    width: 300px;
+    height: 250px;
+    width: 200px;
+    padding: 5px;
+    margin: 0 auto;
   }
 
   .hero-section h1 {
-    font-size: 1.2rem;
+    font-size: 14px;
   }
   .hero-section p {
     font-size: 12px;
@@ -112,6 +117,15 @@
   }
   .hero-desc__card {
     background: whitesmoke;
+  }
+  .hero-section button {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+
+    cursor: pointer;
   }
   .hero-description {
     position: static;

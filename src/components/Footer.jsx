@@ -3,7 +3,7 @@ import "./../style/Footer.css";
 import { FaGlobe } from "react-icons/fa6";
 function Footer() {
   return (
-    <footer className="footer container">
+    <footer className="footer">
       <span>&copy; 2023 shoptop.com</span>
       <span className="language-box">
         <span>

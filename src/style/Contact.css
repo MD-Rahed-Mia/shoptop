@@ -4,6 +4,8 @@
   background: whitesmoke;
   gap: 2rem;
   padding: 1rem;
+  width: 80%;
+  margin: 0 auto;
 }
 .contact-box {
   padding: 1rem;
@@ -28,4 +30,40 @@
 }
 .contact-box ul li:hover {
   color: var(--primary-color);
+}
+
+@media screen and (max-width: 650px) {
+  .contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: whitesmoke;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+  }
+  .contact-box {
+    padding: 8px;
+  }
+  .contact-box ul {
+    list-style-type: none;
+  }
+  .contact-box ul li {
+    cursor: pointer;
+  }
+  .contact-box ul li {
+    cursor: pointer;
+    transition: all 300ms;
+    font-size: 12px;
+  }
+  .social-container {
+    display: flex;
+    align-items: center;
+    font-size: 2rem !important;
+    margin-top: 1.5rem;
+    gap: 2rem;
+  }
+
+  .contact-box ul li:hover {
+    color: var(--primary-color);
+  }
 }
