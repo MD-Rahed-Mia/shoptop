@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
 import "./../style/Cart.css";
 import { MdDeleteForever } from "react-icons/md";
+import { toast } from "react-toastify";
 
 function Cart() {
   //discount rate
@@ -30,6 +31,7 @@ function Cart() {
       updateArray[indexNumber].quantity += 1;
       localStorage.setItem("cart", JSON.stringify(cart));
       setCart(updateArray);
+      toast.success("quantity is inrease.");
     }
   }
 
@@ -56,9 +58,9 @@ function Cart() {
         updateArray[findIndex].quantity -= 1;
         localStorage.setItem("cart", JSON.stringify(updateArray));
         setCart(updateArray);
+        toast.success("quantity is inrease.");
       }
     }
-    console.log(findIndex);
   }
 
   //handle delete cart item
@@ -66,6 +68,7 @@ function Cart() {
     const updateArray = cart.filter((ele) => ele.productId !== productId);
     setCart(updateArray);
     localStorage.setItem("cart", JSON.stringify(updateArray));
+    toast.success("Item is deleted.");
   }
 
   //using reduce method getting total of items quantity and price

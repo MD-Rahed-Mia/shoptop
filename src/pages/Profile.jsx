@@ -5,7 +5,6 @@ import ProfileTab from "../components/ProfileTab";
 import AddressTab from "../components/AddressTab";
 
 function Profile() {
-
   //toggle active tab
   const [toggleTab, setToggleTab] = useState("profile");
 
@@ -22,15 +21,21 @@ function Profile() {
             <h3>Profile management</h3>
             <ul>
               <li
-                className={toggleTab == 'profile' ? "active-tabs" : ''}
+                className={toggleTab == "profile" ? "active-tabs" : ""}
                 onClick={() => toggleTabItem("profile")}
               >
                 Profile
               </li>
-              <li className={toggleTab == 'address-book' ? "active-tabs" : ''} onClick={() => toggleTabItem("address-book")}>
+              <li
+                className={toggleTab == "address-book" ? "active-tabs" : ""}
+                onClick={() => toggleTabItem("address-book")}
+              >
                 Address Book
               </li>
-              <li className={toggleTab == 'payment-method' ? "active-tabs" : ''} onClick={() => toggleTabItem("payment-method")}>
+              <li
+                className={toggleTab == "payment-method" ? "active-tabs" : ""}
+                onClick={() => toggleTabItem("payment-method")}
+              >
                 Payment method
               </li>
             </ul>

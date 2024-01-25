@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import Error from "./components/Error";
 import AllProducts from "./pages/AllProducts";
 import Cart from "./pages/Cart";
@@ -36,6 +37,7 @@ function App() {
         />
         <Route path="*" element={<Error />} />
       </Routes>
+      <ToastContainer />
     </>
   );
 }

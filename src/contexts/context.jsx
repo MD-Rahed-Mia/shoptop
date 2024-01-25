@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   createUserWithEmailAndPassword,
@@ -59,10 +61,10 @@ export const FirebaseContextProvider = (params) => {
     };
     update(ref(database), updates)
       .then((response) => {
-        console.log("address update successful.");
+        toast.success("update address successful.");
       })
       .catch((err) => {
-        console.log(err.message);
+        toast.warn("failed to update addresss.");
       });
   }
 
@@ -108,9 +110,10 @@ export const FirebaseContextProvider = (params) => {
 
     if (existingItem) {
       setCart((prev) => [...prev]);
-      console.log("item already in cart.");
+      toast.success("item is in cart.");
     } else {
       setCart((prev) => [...prev, itemToAdd]);
+      toast.success("item added to cart.");
     }
   };
 
@@ -135,6 +138,7 @@ export const FirebaseContextProvider = (params) => {
         localStorage.setItem("userId", JSON.stringify(user.uid));
         setSignInStatus(!signInStatus);
         setLoadign(false);
+        toast.success("sign in successful.");
 
         //set default cart array to localstorage
         localStorage.getItem("cart") ||
@@ -167,18 +171,20 @@ export const FirebaseContextProvider = (params) => {
           });
         });
         navigate("/login");
+        toast.success("user sign up successful.");
       })
       .catch((error) => {
-        // console.log(error.message);
+        toast.warning("failed to create account.");
       });
   };
 
   //sign out function
   const signOutUser = () => {
     signOut(firebaseAuth).then(() => {
-      console.log("signout successful.");
       setSignInStatus(!signInStatus);
       localStorage.removeItem("userId");
+      navigate("/login");
+      toast.success("sign out.");
     });
   };
 
