@@ -138,7 +138,7 @@ export const FirebaseContextProvider = (params) => {
         localStorage.setItem("userId", JSON.stringify(user.uid));
         setSignInStatus(!signInStatus);
         setLoadign(false);
-        toast.success("sign in successful.");
+        toast.success("Login successful.");
 
         //set default cart array to localstorage
         localStorage.getItem("cart") ||
@@ -146,7 +146,7 @@ export const FirebaseContextProvider = (params) => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.message);
+        toast.warn(err.message);
       });
   };
 
