@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp";
 import Protected from "./router/Protected";
 import "./style/app.css";
 import { BrowserRouter, Routes, Router, Route } from "react-router-dom";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             </Protected>
           }
         />
+        <Route path="/productdetails/:productid" element={<ProductDetails />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <ToastContainer />

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./../style/productdisplay.css";
 import { useFirebase } from "../contexts/context";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //product display cart here
 function Productdisplay(props) {
@@ -18,32 +19,34 @@ function Productdisplay(props) {
       <div className="product-cards">
         {props.data.map((element, index) => {
           return (
-            <div className="product-card" key={index}>
-              <div className="product-card_img">
-                <img src={element.image} alt="" />
-              </div>
-              <div className="product-card_desc">
-                <h3>{element.title}</h3>
-                <div>
-                  <h4>${element.price}</h4>
-                  <h4>${element.price}</h4>
+            <Link to={`/productDetails/${element.id}`}>
+              <div className="product-card" key={index}>
+                <div className="product-card_img">
+                  <img src={element.image} alt="" />
+                </div>
+                <div className="product-card_desc">
+                  <h3>{element.title}</h3>
+                  <div>
+                    <h4>${element.price}</h4>
+                    <h4>${element.price}</h4>
+                  </div>
+                </div>
+                <div className="add-to-card_btn">
+                  <button
+                    onClick={() =>
+                      addToCart(
+                        element.id,
+                        element.image,
+                        element.title,
+                        element.price
+                      )
+                    }
+                  >
+                    add to cart
+                  </button>
                 </div>
               </div>
-              <div className="add-to-card_btn">
-                <button
-                  onClick={() =>
-                    addToCart(
-                      element.id,
-                      element.image,
-                      element.title,
-                      element.price
-                    )
-                  }
-                >
-                  add to cart
-                </button>
-              </div>
-            </div>
+            </Link>
           );
         })}
       </div>
