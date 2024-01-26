@@ -40,6 +40,7 @@
 }
 .product-card_desc {
   padding: 10px;
+  color: #222;
 }
 .product-card_desc > div {
   display: flex;
