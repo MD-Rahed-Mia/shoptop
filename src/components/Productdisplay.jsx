@@ -19,8 +19,8 @@ function Productdisplay(props) {
       <div className="product-cards">
         {props.data.map((element, index) => {
           return (
-            <Link to={`/productDetails/${element.id}`}>
-              <div className="product-card" key={index}>
+            <Link to={`/productDetails/${element.id}`} key={index}>
+              <div className="product-card">
                 <div className="product-card_img">
                   <img src={element.image} alt="" />
                 </div>

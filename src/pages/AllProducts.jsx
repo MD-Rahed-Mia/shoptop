@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./../style/Allproducts.css";
 import Layout from "../Layout";
 import { useFirebase } from "../contexts/context";
+import { Link } from "react-router-dom";
 
 function AllProducts() {
   //storing products
@@ -23,10 +24,11 @@ function AllProducts() {
       .then((data) => {
         setProduct(data);
         setAllProducts(data);
-        setLoading(false)
-      }).catch(err => {
-        console.log(err.message);
+        setLoading(false);
       })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }, []);
 
   //display by cateogy filter json file here
@@ -75,24 +77,26 @@ function AllProducts() {
             ) : (
               product.map((element, index) => {
                 return (
-                  <div className="all-products-card" key={index}>
-                    <img src={element.image} alt="" />
-                    <h4>{element.title}</h4>
-                    <h1 className="pr">$230</h1>
-                    <button
-                      onClick={() =>
-                        handleAddToCart(
-                          element.id,
-                          element.image,
-                          element.title,
-                          element.price,
-                          1
-                        )
-                      }
-                    >
-                      add to cart
-                    </button>
-                  </div>
+                  <Link to={`/productDetails/${element.id}`} key={index}>
+                    <div className="all-products-card">
+                      <img src={element.image} alt="" />
+                      <h4>{element.title}</h4>
+                      <h1 className="pr">$230</h1>
+                      <button
+                        onClick={() =>
+                          handleAddToCart(
+                            element.id,
+                            element.image,
+                            element.title,
+                            element.price,
+                            1
+                          )
+                        }
+                      >
+                        add to cart
+                      </button>
+                    </div>
+                  </Link>
                 );
               })
             )}
